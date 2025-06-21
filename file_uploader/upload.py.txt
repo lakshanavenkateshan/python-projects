@@ -1,0 +1,16 @@
+import os
+import shutil
+
+def upload_file():
+    file_name = input("Enter the file name to upload (with extension): ")
+
+    if not os.path.exists(file_name):
+        print("❌ File does not exist in current folder.")
+        return
+
+    destination = "cloud/"
+    shutil.copy(file_name, destination)
+    print(f"✅ File '{file_name}' uploaded successfully to simulated cloud!")
+
+upload_file()
+
